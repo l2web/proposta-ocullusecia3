@@ -4,13 +4,15 @@ import { Button } from '@/components/ui/button';
 export const InvestmentSection = () => {
   const features = [
     "Estratégia personalizada para sua marca",
-    "Produção completa de conteúdo em vídeo e foto",
-    "Gestão de todas as mídias sociais da unidade",
-    "Campanhas de tráfego pago otimizadas",
+    "Gestão de todas as mídias sociais do escritório",
     "Relatórios mensais detalhados das campanhas",
+    "Consultoria estratégica mensal presencial",
+    "Produção completa de conteúdo em vídeo e foto 1x ao mês",
+    "Campanhas de tráfego pago otimizadas",
     "Suporte prioritário 24/7",
-    "Consultoria estratégica mensal",
-    "Produção de fotos exclusivas de produtos"
+    "Produção de material gráfico incluso (calendários, cartões etc)",
+    "Desenvolvimento de site institucional completo",
+    "Todos os custos de hospedagem e manutenção já inclusos no plano"
   ];
 
   return (
@@ -58,7 +60,7 @@ export const InvestmentSection = () => {
                 <div className="mb-6">
                   <div className="flex items-baseline justify-center gap-2">
                     <span className="text-sm text-muted-foreground">R$</span>
-                    <span className="text-6xl md:text-7xl font-bold text-gradient-gold">1.500</span>
+                    <span className="text-6xl md:text-7xl font-bold text-gradient-gold">3.200</span>
                     <span className="text-lg text-muted-foreground">/mês</span>
                   </div>
                   <p className="text-muted-foreground mt-2">Tudo incluso para acelerar seus resultados</p>
@@ -67,41 +69,57 @@ export const InvestmentSection = () => {
 
               {/* Features */}
               <div className="grid md:grid-cols-2 gap-4 mb-8">
-                {features.map((feature, index) => (
-                  <div 
-                    key={index} 
-                    className="flex items-center gap-3 fade-in-scale"
-                    style={{animationDelay: `${index * 50}ms`}}
-                  >
-                    <div className="w-6 h-6 bg-primary/20 rounded-full flex items-center justify-center">
-                      <Check className="w-4 h-4 text-primary" />
+                {features.map((feature, index) => {
+                  // Verificar se o recurso é um dos que deve ser destacado
+                  const isHighlighted = [
+                    "Produção completa de conteúdo em vídeo e foto 1x ao mês",
+                    "Desenvolvimento de site institucional completo",
+                    "Gestão de todas as mídias sociais do escritório",
+                    "Produção de material gráfico incluso (calendários, cartões etc)"
+                  ].includes(feature);
+                  
+                  return (
+                    <div 
+                      key={index} 
+                      className={`flex items-center gap-3 fade-in-scale ${isHighlighted ? 'bg-primary/10 p-2 rounded-lg border border-primary/20' : ''}`}
+                      style={{animationDelay: `${index * 50}ms`}}
+                    >
+                      <div className={`w-6 h-6 ${isHighlighted ? 'bg-primary/30' : 'bg-primary/20'} rounded-full flex items-center justify-center`}>
+                        <Check className={`w-4 h-4 ${isHighlighted ? 'text-primary' : 'text-primary'}`} />
+                      </div>
+                      <span className={`${isHighlighted ? 'text-primary font-medium' : 'text-muted-foreground'}`}>{feature}</span>
                     </div>
-                    <span className="text-muted-foreground">{feature}</span>
-                  </div>
-                ))}
-              </div>
-
-              {/* CTA */}
-              <div className="text-center">
-              <a
-                href="https://wa.me/556782052940?text=Ol%C3%A1%2C%20quero%20escalar%20o%20marketing%20da%20Ócullus%20&%20Cia%20-%2003"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group mb-4 inline-flex items-center justify-center px-8 py-4 rounded-full bg-yellow-400 text-black font-extrabold text-lg shadow-lg hover:bg-yellow-500 transition-all duration-300 border-4 border-black hover:border-yellow-700"
-                style={{ boxShadow: '0 8px 32px 0 rgba(0,0,0,0.25)' }}
-              >
-                Fale conosco agora mesmo
-                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </a>
-                <p className="text-sm text-muted-foreground">
-                  Sem taxa de setup • Cancele quando quiser
-                </p>
+                  );
+                })}
               </div>
 
               {/* Guarantee badge - agora dentro do card, com espaçamento */}
-              <div className="flex justify-center mt-8">
+              <div className="flex flex-col gap-4 justify-center mt-8">
                 <div className="bg-secondary border-2 border-primary/30 rounded-full px-6 py-3">
                   <div className="text-sm font-semibold text-primary">✓ Contrato inicial de apenas 3 meses</div>
+                </div>
+                <div className="bg-green-100 border border-green-300 rounded-lg px-6 py-4 flex items-center gap-2">
+                  <Check className="w-5 h-5 text-green-600 flex-shrink-0" />
+                  <div className="text-sm text-green-800">
+                    Obs: todos os custos de deslocamento e alimentação já inclusos no plano para o atendimento presencial 1x ao mês em Campo Grande
+                  </div>
+                </div>
+                
+                {/* CTA movido para baixo dos cards de observação */}
+                <div className="text-center mt-6">
+                  <a
+                    href="https://wa.me/556782052940?text=Ol%C3%A1%2C%20quero%20escalar%20o%20marketing%20da%20Ócullus%20&%20Cia%20-%2003"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group mb-4 inline-flex items-center justify-center px-8 py-4 rounded-full bg-yellow-400 text-black font-extrabold text-lg shadow-lg hover:bg-yellow-500 transition-all duration-300 border-4 border-black hover:border-yellow-700"
+                    style={{ boxShadow: '0 8px 32px 0 rgba(0,0,0,0.25)' }}
+                  >
+                    Fale conosco agora mesmo
+                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </a>
+                  <p className="text-sm text-muted-foreground">
+                    Sem taxa de setup • Cancele quando quiser
+                  </p>
                 </div>
               </div>
             </div>

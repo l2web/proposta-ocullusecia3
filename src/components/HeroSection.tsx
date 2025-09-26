@@ -9,8 +9,8 @@ export const HeroSection = () => {
       {/* Background image with overlay */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="/img/ocullusecia_foto.jpg" 
-          alt="Background Ócullus & Cia" 
+          src="/img/backpagina03.png" 
+          alt="Background Gervásio Oliveira e Advogados Associados" 
           className="w-full h-full object-cover opacity-80"
         />
         <div className="absolute inset-0 bg-black opacity-80" />
@@ -38,8 +38,12 @@ export const HeroSection = () => {
 
             {/* Main heading */}
             <div className="fade-in-up">
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
-                <span className="text-gradient-gold gold-shimmer">Proposta Ócullus & Cia - 03</span>
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-none">
+                <span className="text-gradient-gold gold-shimmer flex flex-col -space-y-2">
+                  <span className="text-sm md:text-xl lg:text-2xl font-normal -mb-2">Proposta</span>
+                  <span className="text-5xl md:text-7xl lg:text-8xl">Gervásio Oliveira</span>
+                  <span className="text-sm md:text-xl lg:text-2xl font-normal text-white -mt-2">e Advogados Associados</span>
+                </span>
               </h1>
             </div>
 
@@ -65,8 +69,8 @@ export const HeroSection = () => {
           <div className="flex-[1.2] flex justify-center items-center fade-in-scale">
             <div className="relative">
               <img
-                src="/img/ocullusecia_foto.jpg"
-                alt="Ócullus & Cia"
+                src="/img/backpagina16.png"
+                alt="Gervásio Oliveira e Advogados Associados"
                 className="w-[480px] max-w-full rounded-3xl shadow-2xl"
                 style={{ boxShadow: '0 0 60px 0 rgba(255, 215, 0, 0.35), 0 8px 32px 0 rgba(0,0,0,0.25)' }}
               />
