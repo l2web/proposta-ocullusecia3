@@ -1,7 +1,8 @@
-import { ArrowRight, Play, Sparkles } from 'lucide-react';
+import { ArrowRight, Play, Sparkles, Printer } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import heroImage from '@/assets/hero-marketing.jpg';
 import perfilLogo from '@/assets/perfil-logo.jpg';
+import { Link } from 'react-router-dom';
 
 export const HeroSection = () => {
   return (
@@ -27,6 +28,16 @@ export const HeroSection = () => {
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           {/* Coluna da esquerda: texto e botões */}
           <div className="flex-[0.9] text-center lg:text-left flex flex-col items-center lg:items-start">
+            {/* Botão de impressão */}
+            <div className="w-full flex justify-end mb-2">
+              <Link to="/print">
+                <Button variant="outline" size="sm" className="text-white border-white hover:bg-white/10">
+                  <Printer className="mr-2 h-4 w-4" />
+                  Versão para impressão
+                </Button>
+              </Link>
+            </div>
+            
             {/* Logo */}
             <div className="flex justify-center mb-8 fade-in-scale pt-8">
               <img 
